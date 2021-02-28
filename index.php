@@ -4,7 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIService</title>
+    <title>SIService
+    <?php
+    switch ($_GET['page']){
+        case "dashboard":
+            echo " | Dashboard";
+            break;
+        case "service":
+            echo  " | Service";
+            break;
+        case "laporan":
+            echo " | Laporan";
+            break;
+        default:
+            echo "";
+    }
+        ?>
+    </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -54,7 +70,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="index.php?page=dashboard" class="nav-link active">
+                            <a href="index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard')? 'active': '';?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -62,7 +78,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=service" class="nav-link">
+                            <a href="index.php?page=service" class="nav-link  <?= ($_GET['page'] == 'service')? 'active': '';?>">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>
                                     Data Service
@@ -70,7 +86,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=laporan" class="nav-link">
+                            <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan')? 'active': '';?>">
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Laporan
