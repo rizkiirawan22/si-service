@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SIService
-    <?php
-    switch ($_GET['page']){
-        case "dashboard":
-            echo " | Dashboard";
-            break;
-        case "service":
-            echo  " | Service";
-            break;
-        case "laporan":
-            echo " | Laporan";
-            break;
-        default:
-            echo "";
-    }
+        <?php
+        switch ($_GET['page']) {
+            case "dashboard":
+                echo " | Dashboard";
+                break;
+            case "service":
+                echo  " | Service";
+                break;
+            case "laporan":
+                echo " | Laporan";
+                break;
+            default:
+                echo "";
+        }
         ?>
     </title>
     <!-- Tell the browser to be responsive to screen width -->
@@ -70,7 +70,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard')? 'active': '';?>">
+                            <a href="index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +78,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=service" class="nav-link  <?= ($_GET['page'] == 'service')? 'active': '';?>">
+                            <a href="index.php?page=service" class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>
                                     Data Service
@@ -86,10 +86,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan')? 'active': '';?>">
+                            <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Laporan
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item fixed-bottom mb-3">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    Logout
                                 </p>
                             </a>
                         </li>
@@ -99,7 +107,6 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
