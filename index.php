@@ -1,37 +1,44 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+include "app/connection.php";
+if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
+    header('location:login/index.php');
+} else {
+    ?>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIService
-    <?php
-    switch ($_GET['page']){
-        case "dashboard":
-            echo " | Dashboard";
-            break;
-        case "service":
-            echo  " | Service";
-            break;
-        case "laporan":
-            echo " | Laporan";
-            break;
-        default:
-            echo "";
-    }
-        ?>
-    </title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="assets/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SIService
+            <?php
+            switch ($_GET['page']) {
+                case "dashboard":
+                    echo " | Dashboard";
+                    break;
+                case "service":
+                    echo " | Service";
+                    break;
+                case "laporan":
+                    echo " | Laporan";
+                    break;
+                default:
+                    echo "";
+            }
+            ?>
+        </title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="assets/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+    <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -48,7 +55,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index.php" class="brand-link">
-                <img src="assets/img/logo.jpg" alt="Si-Service" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="assets/img/logo.jpg" alt="Si-Service" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
                 <span class="brand-text"><b>SI</b>Service</span>
             </a>
 
@@ -66,11 +74,13 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard')? 'active': '';?>">
+                            <a href="index.php?page=dashboard"
+                               class="nav-link <?= ($_GET['page'] == 'dashboard') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +88,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=service" class="nav-link  <?= ($_GET['page'] == 'service')? 'active': '';?>">
+                            <a href="index.php?page=service"
+                               class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>
                                     Data Service
@@ -86,7 +97,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan')? 'active': '';?>">
+                            <a href="index.php?page=laporan"
+                               class="nav-link <?= ($_GET['page'] == 'laporan') ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Laporan
@@ -129,4 +141,7 @@
     <!-- AdminLTE App -->
     <script src="assets/js/adminlte.min.js"></script>
 
-</html>
+    </html>
+    <?php
+}
+?>
