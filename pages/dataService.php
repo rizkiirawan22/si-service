@@ -1,3 +1,8 @@
+<?php
+
+include('app/functions.php');
+
+?>
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -49,16 +54,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <?php
+                                $no = 1;
+                                $datas = showDataServices();
+                                foreach ($datas as $data) : ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $data['nama']; ?></td>
+                                        <td><?= $data['tipe_hp']; ?></td>
+                                        <td><?= $data['imei']; ?></td>
+                                        <td><?= $data['tgl_masuk']; ?></td>
+                                        <td><?= $data['keterangan']; ?></td>
+                                        <td><?= $data['status']; ?></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Details
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <a class="dropdown-item" href="#">Hapus</a>
+                                                    <a class="dropdown-item" href="#">Selesai</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
