@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2021 at 01:59 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Feb 28, 2021 at 03:27 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,6 +47,26 @@ INSERT INTO `tbl_permintaan_service_dwirizki` (`id`, `tgl_masuk`, `nama`, `no_hp
 (1, '2021-02-28', 'Dwi', '0812361234124', 'Iphone 13 Pro Max', '32090248345345', 'Diproses', 'LCD Pecah, Touchscreen Pecah', 0),
 (2, '2021-02-28', 'Dwi', '0812361234124', 'Iphone 13 Pro Max', '32090248345345', 'Diproses', 'Lcd dan TS pecah', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user_dwirizki`
+--
+
+CREATE TABLE `tbl_user_dwirizki` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `passwd` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user_dwirizki`
+--
+
+INSERT INTO `tbl_user_dwirizki` (`id`, `nama`, `username`, `passwd`) VALUES
+(1, 'Admin', 'admin', 'f3c263e85864988daea78fb5eea0ac9b');
+
 --
 -- Indexes for dumped tables
 --
@@ -58,6 +78,12 @@ ALTER TABLE `tbl_permintaan_service_dwirizki`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_user_dwirizki`
+--
+ALTER TABLE `tbl_user_dwirizki`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -66,6 +92,12 @@ ALTER TABLE `tbl_permintaan_service_dwirizki`
 --
 ALTER TABLE `tbl_permintaan_service_dwirizki`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_user_dwirizki`
+--
+ALTER TABLE `tbl_user_dwirizki`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
