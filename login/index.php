@@ -10,14 +10,16 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
         $tampil = mysqli_query($conn, "SELECT * FROM tbl_user_dwirizki WHERE username='$username' AND passwd='$passwd'");
         $data = mysqli_fetch_array($tampil);
         if (empty($data['username'])) {
-            echo "<script>alert('Gagal Login');
-                window.location='login.php';</script>";
+            echo "<script>alert('Login Failed');
+                window.location='index.php';</script>";
+        } elseif ($_SESSION["captcha"] != $_POST["captcha"]) {
+            echo "<script>alert('Wrong Captcha!')</script>";
         } else {
             $_SESSION['id'] = $data['id'];
             $_SESSION['nama'] = $data['nama'];
             $_SESSION['username'] = $data['username'];
             $_SESSION['passwd'] = $data['passwd'];
-            echo "<script>alert('Berhasil Login');
+            echo "<script>alert('You have been logged in');
         window.location='../index.php';</script>";
         }
     }
@@ -56,7 +58,7 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
 
                 <form action="index.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" name="username">
+                        <input type="text" class="form-control" placeholder="Username" name="username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -64,7 +66,7 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="passwd">
+                        <input type="password" class="form-control" placeholder="Password" name="passwd" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -72,6 +74,12 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
                         </div>
                     </div>
                     <div class="row justify-content-end">
+                        <div class="col-3">
+                            <img src="../app/captcha.php" alt="">
+                        </div>
+                        <div class="col">
+                            <input type="text" name="captcha" class="form-control" placeholder="Captcha" required>
+                        </div>
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block" name="login">Sign In</button>
