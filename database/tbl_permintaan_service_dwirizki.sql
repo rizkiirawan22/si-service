@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2021 at 10:41 AM
+-- Generation Time: Feb 28, 2021 at 01:36 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -36,8 +36,16 @@ CREATE TABLE `tbl_permintaan_service_dwirizki` (
   `imei` varchar(15) NOT NULL,
   `status` enum('Selesai','Diproses','Dibatalkan') NOT NULL,
   `keterangan` text NOT NULL,
-  `biaya` int(11) NOT NULL
+  `biaya` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_permintaan_service_dwirizki`
+--
+
+INSERT INTO `tbl_permintaan_service_dwirizki` (`id`, `tgl_masuk`, `nama`, `no_hp`, `tipe_hp`, `imei`, `status`, `keterangan`, `biaya`) VALUES
+(1, '2021-02-28', 'Dwi', '0812361234124', 'Iphone 13 Pro Max', '32090248345345', 'Diproses', 'LCD Pecah, Touchscreen Pecah', 0),
+(2, '2021-02-28', 'Dwi', '0812361234124', 'Iphone 13 Pro Max', '32090248345345', 'Diproses', 'Lcd dan TS pecah', 0);
 
 --
 -- Indexes for dumped tables
@@ -57,7 +65,7 @@ ALTER TABLE `tbl_permintaan_service_dwirizki`
 -- AUTO_INCREMENT for table `tbl_permintaan_service_dwirizki`
 --
 ALTER TABLE `tbl_permintaan_service_dwirizki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
