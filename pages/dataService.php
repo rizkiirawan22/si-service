@@ -28,6 +28,7 @@ include('app/functions.php');
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
+                        <a href="" class="btn btn-primary btn-sm">Tambah Data</a>
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
                                 <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
