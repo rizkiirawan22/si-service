@@ -4,8 +4,8 @@ switch ($page) {
     case 'dashboard':
         include "pages/dashboard.php";
         break;
-    case 'service':
-        include "pages/dataService.php";
+    case 'create':
+        include "services/create.php";
         break;
     case 'laporan':
         include "pages/laporan.php";
