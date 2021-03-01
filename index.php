@@ -17,38 +17,8 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                 case "dashboard":
                     echo " | Dashboard";
                     break;
-                case "service":
-                    echo " | Service";
-                    break;
-                case "laporan":
-                    echo " | Laporan";
-                    break;
-                default:
-                    echo "";
-            }
-            ?>
-        </title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="assets/css/adminlte.min.css">
-        <!-- Google Font: Source Sans Pro -->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    </head>
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SIService
-            <?php
-            switch ($_GET['page']) {
-                case "dashboard":
-                    echo " | Dashboard";
-                    break;
-                case "service":
-                    echo " | Service";
+                case "create":
+                    echo " | Insert Service Data";
                     break;
                 case "laporan":
                     echo " | Laporan";
@@ -115,7 +85,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?page=service" class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
+                                <a href="services/?page=1" class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Data Service
