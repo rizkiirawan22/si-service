@@ -39,7 +39,7 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- icheck bootstrap -->
-        <link rel="stylesheet" href="../assets/css/icheck-bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="../assets/css/icheck-bootstrap.min.css"> -->
         <!-- Theme style -->
         <link rel="stylesheet" href="../assets/css/adminlte.min.css">
         <!-- Google Font: Source Sans Pro -->
@@ -94,7 +94,7 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
         <!-- /.login-box -->
 
         <!-- jQuery -->
-        <script src="../assets/plugins/jquery/jquery.min.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
         <script src="../assets/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
