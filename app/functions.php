@@ -66,7 +66,7 @@ function edit()
                 WHERE id = '$id'";
     $query = mysqli_query($conn, $sql);
     if ($query) {
-        echo "<script>alert('Data Berhasil Diuabah');window.location='index.php';</script>";
+        echo "<script>alert('Permintaan telah diselesaikan');window.location='index.php';</script>";
     } else {
         echo "Gagal";
     }
@@ -111,7 +111,7 @@ function batal()
                 WHERE id = '$id'";
     $query = mysqli_query($conn, $sql);
     if ($query) {
-        echo "<script>alert('Data Berhasil Diubah');window.location='index.php';</script>";
+        echo "<script>alert('Permintaan telah dibatalkan');window.location='index.php';</script>";
     } else {
         echo "Gagal";
     }
