@@ -82,14 +82,6 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../index.php?page=laporan" class="nav-link">
-                                    <i class="nav-icon fas fa-file-alt"></i>
-                                    <p>
-                                        Laporan
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="../app/logout.php" class="nav-link">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>

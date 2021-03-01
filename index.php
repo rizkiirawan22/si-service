@@ -20,9 +20,6 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                 case "create":
                     echo " | Insert Service Data";
                     break;
-                case "laporan":
-                    echo " | Laporan";
-                    break;
                 default:
                     echo "";
             }
@@ -89,14 +86,6 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Data Service
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan') ? 'active' : ''; ?>">
-                                    <i class="nav-icon fas fa-file-alt"></i>
-                                    <p>
-                                        Laporan
                                     </p>
                                 </a>
                             </li>

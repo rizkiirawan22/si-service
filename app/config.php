@@ -7,9 +7,6 @@ switch ($page) {
     case 'create':
         include "services/create.php";
         break;
-    case 'laporan':
-        include "pages/laporan.php";
-        break;
 
     default:
         include "pages/dashboard.php";
