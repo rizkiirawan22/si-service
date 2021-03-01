@@ -162,7 +162,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                                 $total_pages = ceil($page_count / $limit);
 
                                                 $no = $first_page + 1;
-                                                $datas = query("SELECT * FROM tbl_permintaan_service_dwirizki ORDER BY nama ASC LIMIT $first_page, $limit");
+                                                $datas = query("SELECT * FROM tbl_permintaan_service_dwirizki ORDER BY tgl_masuk ASC LIMIT $first_page, $limit");
                                                 foreach ($datas as $data) : ?>
                                                     <tr class="text-center">
                                                         <td><?= $no++ ?></td>
