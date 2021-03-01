@@ -20,7 +20,7 @@ if (!empty($_SESSION['username']) and !empty($_SESSION['passwd'])) {
             $_SESSION['username'] = $data['username'];
             $_SESSION['passwd'] = $data['passwd'];
             echo "<script>alert('You have been logged in');
-        window.location='../index.php';</script>";
+        window.location='../index.php?page=dashboard';</script>";
         }
     }
     ?>
