@@ -12,7 +12,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SIService | Edit
+        <title>SIService | Detail
         </title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,7 +108,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0 text-dark">Edit Service Data</h1>
+                                <h1 class="m-0 text-dark">Detail Service Data</h1>
                             </div><!-- /.col -->
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
@@ -164,7 +164,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" name="edit" class="btn btn-primary">Update</button>
+                                <button type="submit" name="edit" class="btn btn-primary">Selesai</button>
                             </div>
                         </form>
                     </div>
