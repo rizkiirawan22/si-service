@@ -74,7 +74,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?page=service" class="nav-link active">
+                                <a href="?page=1" class="nav-link active">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Data Service
@@ -103,7 +103,6 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                 </div>
                 <!-- /.sidebar -->
             </aside>
-
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
@@ -146,7 +145,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-head-fixed text-nowrap">
                                             <thead>
-                                                <tr>
+                                                <tr class="text-center">
                                                     <th>No</th>
                                                     <th>Nama</th>
                                                     <th>Tipe HP</th>
@@ -154,6 +153,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                                     <th>Tanggal Masuk</th>
                                                     <th>Keterangan</th>
                                                     <th>Status</th>
+                                                    <th>Biaya</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -172,7 +172,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                                 $no = $first_page + 1;
                                                 $datas = query("SELECT * FROM tbl_permintaan_service_dwirizki ORDER BY nama ASC LIMIT $first_page, $limit");
                                                 foreach ($datas as $data) : ?>
-                                                    <tr>
+                                                    <tr class="text-center">
                                                         <td><?= $no++ ?></td>
                                                         <td><?= $data['nama']; ?></td>
                                                         <td><?= $data['tipe_hp']; ?></td>
@@ -180,15 +180,23 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                                         <td><?= $data['tgl_masuk']; ?></td>
                                                         <td><?= $data['keterangan']; ?></td>
                                                         <td><?= $data['status']; ?></td>
+                                                        <?php if ($data['biaya']  != 0) : ?>
+                                                            <td><?= $data['biaya']; ?></td>
+                                                        <?php else : ?>
+                                                            <td>-</td>
+                                                        <?php endif; ?>
                                                         <td>
                                                             <div class="dropdown">
                                                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                     Details
                                                                 </button>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                    <a class="dropdown-item" href="#">Selesai</a>
+                                                                    <a class="dropdown-item" href="proses.php?batalId=<?= $data['id'] ?>">Batalkan</a>
+                                                                    <a class="dropdown-item" href="proses.php?deleteId=<?= $data['id'] ?>">Hapus</a>
+                                                                    <form action="edit.php" method="POST">
+                                                                        <input type="hidden" name="id" value="<?= $data['id'] ?>">
+                                                                        <button class="dropdown-item" type="submit" name="edit">Selesai</button>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </td>
