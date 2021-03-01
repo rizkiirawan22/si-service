@@ -63,7 +63,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                             <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                             <li class="nav-item">
-                                <a href="index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard') ? 'active' : ''; ?>">
+                                <a href="../index.php?page=dashboard" class="nav-link <?= ($_GET['page'] == 'dashboard') ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Dashboard
@@ -71,18 +71,10 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="services/?page=1" class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
+                                <a href="../services/?page=1" class="nav-link  <?= ($_GET['page'] == 'service') ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Data Service
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.php?page=laporan" class="nav-link <?= ($_GET['page'] == 'laporan') ? 'active' : ''; ?>">
-                                    <i class="nav-icon fas fa-file-alt"></i>
-                                    <p>
-                                        Laporan
                                     </p>
                                 </a>
                             </li>
@@ -113,7 +105,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passwd'])) {
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="services/?page=1">Data Services</a></li>
-                                    <li class="breadcrumb-item active">Create</li>
+                                    <li class="breadcrumb-item active">Detail</li>
                                 </ol>
                             </div><!-- /.col -->
                         </div><!-- /.row -->
